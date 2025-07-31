@@ -237,7 +237,7 @@
       emoteSound: Kitsune
       useSex: true
 
-# REPLACE SOUNDS 
+# REPLACE SOUNDS
 
 - type: trait
   id: VulpkaninSoundsReplace
@@ -483,4 +483,24 @@
     - !type:TraitSetAdditionalEmoteSound
       emoteSound: Kitsune
       useSex: true
+      replace: true
+
+- type: trait
+  id: OniSoundsReplaceSex
+  category: TraitsSpeechSounds
+  points: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsRaceSounds
+    - !type:CharacterSpeciesRequirement
+      inverted: false
+      species:
+        - Oni
+  functions:
+    - !type:TraitAddTag
+      tags:
+      - OniEmotes
+    - !type:TraitSetAdditionalEmoteSound
+      emoteSound: Oni
+      invertSex: true
       replace: true

@@ -55,4 +55,6 @@
       id: ResomiSoundsReplace
     - type: trait
       id: KitsuneSoundsReplace
+    - type: trait
+      id: OniSoundsReplaceSex
 

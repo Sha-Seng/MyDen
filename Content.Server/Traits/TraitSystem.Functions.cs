@@ -903,6 +903,10 @@ public sealed partial class TraitSetAdditionalEmoteSound : TraitFunction
     [DataField, AlwaysPushInheritance]
     public bool UseSex { get; private set; }
 
+    [DataField, AlwaysPushInheritance]
+
+    public bool InvertSex { get; private set; }
+
     [DataField("replace"), AlwaysPushInheritance]
     public bool ReplaceExistingEmotes { get; private set; }
 
@@ -923,6 +927,14 @@ public sealed partial class TraitSetAdditionalEmoteSound : TraitFunction
                 emotePrefix = "Female";
             else
                 emotePrefix = "Male";
+        }
+
+        if (InvertSex)
+        {
+            if (sex == Sex.Female)
+                emotePrefix = "Male";
+            else
+                emotePrefix = "Female";
         }
 
         var protoId = emotePrefix + ExtraEmoteSoundPrototype;
